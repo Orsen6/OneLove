@@ -2,15 +2,22 @@ import express from 'express';
 import {} from 'dotenv/config';
 import sequelize from './db.js';
 import models from './models/models.js';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import router from './router/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors());
+app.use('/api', router);
 
 const start = async () => {
     try {
-        sequelize.authenticate();
-        sequelize.sync();
+        await sequelize.authenticate();
+        await sequelize.sync();
         app.listen(PORT, () => console.log(`hello form ${PORT}`));
     } catch (error) {
         
