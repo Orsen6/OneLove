@@ -19,42 +19,42 @@ class UserController{
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
             return res.json(userData);
         } catch (error) {
-            console.log(error.message);
+            next(error);
         }
     }
     async login(req, res, next) {
         try {
             
         } catch (error) {
-            
+            next(error);
         }
     }
     async logout(req, res, next) {
         try {
             
         } catch (error) {
-            
+            next(error);
         }
     }
     async activate(req, res, next) {
         try {
             
         } catch (error) {
-            
+            next(error);
         }
     }
     async refresh(req, res, next) {
         try {
             
         } catch (error) {
-            
+            next(error);
         }
     }
     async getUser(req, res, next) {
         try {
             
         } catch (error) {
-            
+            next(error);
         }
     }
 
