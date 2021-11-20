@@ -1,6 +1,6 @@
 import {User} from '../models/models.js';
 import bcrypt from 'bcrypt';
-import TokenService from './token_service.js';
+import tokenService from './token_service.js';
 import UserDto from '../dtos/user-dto.js';
 import ApiError from "../exceptions/api-error.js";
 
@@ -14,8 +14,8 @@ class UserService {
         const user = await User.create({...userData})
 
         const userDto = new UserDto(user);
-        const tokens = TokenService.generateTokens({...userDto});
-        await TokenService.saveToken(userDto.id, tokens.refreshToken);
+        const tokens = tokenService.generateTokens({...userDto});
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
 
         return {...tokens, user: userDto }
     }
@@ -30,14 +30,32 @@ class UserService {
             throw ApiError.BadRequest('Incorrect password');
         }
         const userDto = new UserDto(user);
-        const tokens = TokenService.generateTokens({...userDto});
-        await TokenService.saveToken(userDto.id, tokens.refreshToken);
+        const tokens = tokenService.generateTokens({...userDto});
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
 
-        return {...tokens, ...user.dataValues}
+        return {...tokens, ...userDto}
     }
 
     async logout(refreshToken) {
-        return await TokenService.deleteToken(refreshToken);
+        return await tokenService.deleteToken(refreshToken);
+    }
+
+    async refresh(refreshToken){
+        if (!refreshToken) {
+            throw ApiError.UnauthorizedError();
+        }
+        const userData = tokenService.validationRefreshToken(refreshToken);
+        const tokenFromDb = await tokenService.findToken(refreshToken);
+
+        if (!userData || !tokenFromDb){
+            throw ApiError.UnauthorizedError();
+        }
+        const user = await User.findByPk(userData.id);
+        const userDto = new UserDto(user);
+        const tokens = tokenService.generateTokens({...userDto});
+
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+        return {...tokens, user: userDto}
     }
 }
 export default new UserService()
