@@ -15,10 +15,12 @@ class UserController{
                 return next(ApiError.BadRequest('Validation error', errors.array()));
             }
             const {email, password, name, surname, age, gender, summary} = req.body;
-            const {image} = req.files;
-
-            let imageName = v4() + ".jpg";
-            await image.mv(path.resolve(__dirname, 'static', imageName));
+            let imageName = null
+            if (req.files !== null) {
+                const {image} = req.files;
+                let imageName = v4() + ".jpg";
+                await image.mv(path.resolve(__dirname, 'static', imageName));
+            }
             const userData = await userService.registration(
                 {email, password, name, surname, age, gender, image: imageName, summary}
             );
@@ -40,7 +42,10 @@ class UserController{
     }
     async logout(req, res, next) {
         try {
-            
+            const {refreshToken} = req.cookies;
+            const token = await userService.logout(refreshToken);
+            res.clearCookie('refreshToken');
+            return res.status(200);
         } catch (error) {
             next(error);
         }

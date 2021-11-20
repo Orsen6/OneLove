@@ -16,6 +16,10 @@ class TokenService {
         }
         return await Token.create({userId: userId, refreshToken: refreshToken});
     }
+
+    async deleteToken(refreshToken) {
+        return await Token.destroy({where:{refreshToken: refreshToken}})
+    }
 }
 
 export default new TokenService()

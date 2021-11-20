@@ -35,5 +35,9 @@ class UserService {
 
         return {...tokens, ...user.dataValues}
     }
+
+    async logout(refreshToken) {
+        return await TokenService.deleteToken(refreshToken);
+    }
 }
 export default new UserService()
