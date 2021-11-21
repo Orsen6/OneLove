@@ -3,6 +3,7 @@ import {v4} from 'uuid';
 import path from 'path';
 import {validationResult} from "express-validator";
 import ApiError from '../exceptions/api-error.js';
+import {User, Token} from '../models/models.js';
 
 const __dirname = path.resolve();
 
@@ -45,7 +46,7 @@ class UserController{
             const {refreshToken} = req.cookies;
             const token = await userService.logout(refreshToken);
             res.clearCookie('refreshToken');
-            return res.status(200);
+            return res.status(200).json('200');
         } catch (error) {
             next(error);
         }
@@ -69,7 +70,12 @@ class UserController{
     }
     async getUser(req, res, next) {
         try {
-            
+            if (!req.cookies.refreshToken){
+                return next(ApiError.UnauthorizedError());
+            }
+           const tokenData = await Token.findOne({where: {refreshToken: req.cookies.refreshToken}});
+           const userData = await User.findByPk(tokenData.userId);
+           return res.json(userData);
         } catch (error) {
             next(error);
         }

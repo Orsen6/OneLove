@@ -57,5 +57,10 @@ class UserService {
         await tokenService.saveToken(userDto.id, tokens.refreshToken);
         return {...tokens, user: userDto}
     }
+
+    async getUserData(userId){
+        const userData = await User.findByPk(userId);
+        return userData;
+    }
 }
 export default new UserService()
