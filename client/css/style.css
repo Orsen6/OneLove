@@ -66,7 +66,7 @@ input{
 .main-form{
     background-color: #fff;
     padding: 77px 50px 30px;
-    height: 100%;
+    max-height: 100vh;
     width: 450px;
     z-index: 5;
 }
@@ -126,6 +126,7 @@ input{
 .main-form_wrap{
     display: flex;
     align-items: center;
+    margin-bottom: 40px;
 }
 .main-form_ckeckbox{
     position: absolute;
@@ -154,4 +155,108 @@ input{
     width: 18px;
     height: 18px;
     background-size: contain;
+}
+.main-form_btn{
+    padding: 0 62px;
+    width: 100%;
+    height: 62px;
+    border-radius: 3px;
+    border: none;
+    background-color: #d33f8d;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+.main-form_relink{
+    padding-top: 100px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
+}
+.main-form_step{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
+    text-decoration: none;
+    padding: 0 3px 1px;
+    border-bottom: 1px solid #999999;
+}
+.main-form_btn-register{
+    margin-top: 50px;
+}
+.main-form_password-title{
+    padding-top: 10px;
+    text-align:justify;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
+}
+.invalid-confirm{
+    padding-top: 5px;
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: red;
+}
+.main-form_about{
+    display: none;
+}
+.main-form_registration.main-form_registration--invise{
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+.main-form_about.main-form_about--active{
+    display: block;
+}
+.main-form_about-name,
+.main-form_about-surname,
+.main-form_about-age,
+.main-form_about-summary{
+    height: 62px;
+    padding: 0 30px;
+    width: 355px;
+    background-color: #e6e6e6;
+    border-radius: 3px;
+    border: none;
+    display: block;
+    margin: 0 auto 15px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    outline: none;
+}
+.main-form_about-summary{
+    height: 100px;
+}
+.main-form_about-wrap{
+    display: block;
+    padding-left: 20px;
+}
+.main-form_about-label{
+    margin-right: 20px;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    align-items: center;
+}
+.main-form_about-register{
+    margin-top: 20px;
+    text-transform: uppercase;
+    padding: 0 62px;
+    width: 100%;
+    height: 62px;
+    border-radius: 3px;
+    border: none;
+    background-color: #d33f8d;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #fff;
 }

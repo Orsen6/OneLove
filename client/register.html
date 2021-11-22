@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <main class="main">
+        <div class="container">
+            <form id="form1" class="main-form main-form_registration">
+                <label class="main-form_title">
+                    Registration
+                </label>
+                <div class="add">
+                    <span class="add-span1"></span>
+                    <input type="text" placeholder="email" class="main-form_input main-form_login">
+                </div>
+                <div class="add">
+                   
+                    <span class="add-span2"></span>
+                    <input id="password" type="text" placeholder="Password" class="main-form_input main-form_password" pattern="[a-zA-Z0-9]{4,90}">
+                    <h3 class="main-form_password-title">
+                        The password must consist only of Latin characters and numbers
+                    </h3>
+                    <span class="add-span2"></span>
+                    <input id="confirm-password" type="text" placeholder="Confirm password" class="main-form_input main-form_password" pattern="[a-zA-Z0-9]{4,90}">
+                    <div class="invalid-confirm"></div>
+                </div>
+                <!-- <label class="main-form_wrap">
+                    <input id="main-form_ckeckbox" type="checkbox" class="main-form_ckeckbox">
+                    <label for="main-form_ckeckbox" class="main-form_wrap-label">
+                        Remember me
+                    </label>
+                </label> -->
+                <button id="btn-register" class="main-form_btn main-form_btn-continue">
+                    CONTINUE
+                </button>
+                <div class="main-form_relink">
+                    Have an account?
+                    <a href="#" class="main-form_step">
+                        Sign in now
+                    </a>
+                </div>
+            </form>
+            <form id="form2" class="main-form main-form_about">
+                <label class="main-form_title">
+                    About
+                </label>
+                <input placeholder="name" type="text" class="main-form_about-name">
+                <input placeholder="surname" type="text" class="main-form_about-surname">
+                <input placeholder="age" type="text" class="main-form_about-age">
+                <input placeholder="summary" type="text" class="main-form_about-summary">
+                <label class="main-form_about-wrap">
+                    <label class="main-form_about-label"><input type="radio" class="main-form_about-radiobtn"> male</label>
+                    <label class="main-form_about-label"><input type="radio" class="main-form_about-radiobtn"> female</label>
+                </label>
+                <input class="main-form_about-register" type="button" value="REgister" onclick="submitForms()" />
+                <input type="file">
+                <div class="main-form_relink">
+                    Have an account?
+                    <a href="#" class="main-form_step">
+                        Sign in now
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
