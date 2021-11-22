@@ -207,7 +207,7 @@ input{
 .main-form_about{
     display: none;
 }
-.main-form_registration.main-form_registration--invise{
+.registration.invise{
     z-index: -1;
     opacity: 0;
     position: absolute;

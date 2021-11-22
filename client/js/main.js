@@ -17,10 +17,11 @@ window.addEventListener("DOMContentLoaded", function() {
 })
 
 document.querySelector(".main-form_btn-continue").addEventListener("click", () => {
-    document.querySelector(".main-form_registration").classList.add("main-form_registration--invise");
+    document.querySelector(".registration").classList.add("invise");
     document.querySelector(".main-form_about").classList.add("main-form_about--active");
 });
-submitForms = function(){
-    document.getElementById("form1").submit();
-    document.getElementById("form2").submit();
-}
+
+// submitForms = function(){
+//     document.getElementById("form1").submit();
+//     document.getElementById("form2").submit();
+// }
