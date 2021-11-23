@@ -1,4 +1,5 @@
 import userService from '../service/user_service.js';
+import MailService from '../service/mail_service.js';
 import {v4} from 'uuid';
 import path from 'path';
 import {validationResult} from "express-validator";
@@ -51,9 +52,20 @@ class UserController{
             next(error);
         }
     }
-    async activate(req, res, next) {
+
+    async sendMail(req, res, next) {
+        try{
+            const link = v4();
+            const {email} = req.body;
+            await MailService.sendChangePassMail(email, `${process.env.API_URL}/api/change-pass/${link}`);
+        } catch(error){
+            next(error)
+        }
+    }
+
+    async changePass(req, res, next) {
         try {
-            
+
         } catch (error) {
             next(error);
         }

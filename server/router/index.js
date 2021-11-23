@@ -11,8 +11,9 @@ router.post('/registration',
     userController.registration);
 router.post('/login', userController.login);
 router.post('/logout', userController.logout);
+router.post('/sendmail', userController.sendMail);
 
-router.get('/activate/:link', userController.activate);
+router.get('/change-pass/:link', userController.changePass);
 router.get('/refresh', userController.refresh);
 router.get('/profile', authMiddleware, userController.getUser);
 

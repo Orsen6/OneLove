@@ -8,7 +8,7 @@ class UserService {
     async registration(userData) {
         const candidate = await User.findOne({where: {email: userData.email}});
         if (candidate) {
-            throw new ApiError.BadRequest(`User with mail ${userData.email} already exists`);
+            throw ApiError.BadRequest(`User with mail ${userData.email} already exists`);
         }
         userData.password = await bcrypt.hash(userData.password, 3);
         const user = await User.create({...userData})
