@@ -12,8 +12,9 @@ router.post('/registration',
 router.post('/login', userController.login);
 router.post('/logout', userController.logout);
 router.post('/sendmail', userController.sendMail);
-
-router.get('/change-pass/:link', userController.changePass);
+router.post('/change-pass/:link',
+    body('newPass').isLength({min: 3, max: 30}),
+    userController.changePass);
 router.get('/refresh', userController.refresh);
 router.get('/profile', authMiddleware, userController.getUser);
 

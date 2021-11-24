@@ -62,5 +62,13 @@ class UserService {
         const userData = await User.findByPk(userId);
         return userData;
     }
+
+    async changePass(newUserPass, link){
+        const user = await User.findOne({where:{passLink: link}});
+        user.password = await bcrypt.hash(newUserPass, 3);
+        user.passLink = null;
+        await user.save();
+
+    }
 }
 export default new UserService()
