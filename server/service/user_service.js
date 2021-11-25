@@ -8,7 +8,7 @@ class UserService {
     async registration(userData) {
         const candidate = await User.findOne({where: {email: userData.email}});
         if (candidate) {
-            throw new ApiError.BadRequest(`User with mail ${userData.email} already exists`);
+            throw ApiError.BadRequest(`User with mail ${userData.email} already exists`);
         }
         userData.password = await bcrypt.hash(userData.password, 3);
         const user = await User.create({...userData})
@@ -61,6 +61,14 @@ class UserService {
     async getUserData(userId){
         const userData = await User.findByPk(userId);
         return userData;
+    }
+
+    async changePass(newUserPass, link){
+        const user = await User.findOne({where:{passLink: link}});
+        user.password = await bcrypt.hash(newUserPass, 3);
+        user.passLink = null;
+        await user.save();
+
     }
 }
 export default new UserService()

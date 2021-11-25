@@ -12,7 +12,8 @@ export const User = sequelize.define('user', {
     image: {type: DataTypes.STRING},
     gender: {type: DataTypes.SMALLINT, defaultValue: 3},
     age: {type: DataTypes.SMALLINT, allowNull: false},
-    summary: {type: DataTypes.TEXT}
+    summary: {type: DataTypes.TEXT},
+    passLink: {type: DataTypes.STRING, unique: true}
 })
 
 export const Token = sequelize.define('token', {

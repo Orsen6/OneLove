@@ -1,4 +1,5 @@
 import userService from '../service/user_service.js';
+import MailService from '../service/mail_service.js';
 import {v4} from 'uuid';
 import path from 'path';
 import {validationResult} from "express-validator";
@@ -51,19 +52,44 @@ class UserController{
             next(error);
         }
     }
-    async activate(req, res, next) {
+
+    async changePass(req, res, next) {
         try {
-            
+            const errors = validationResult(req);
+            const {newPass} = req.body;
+            console.log(newPass)
+            if (!errors.isEmpty()){
+                return next(ApiError.BadRequest('Validation error', errors.array()));
+            }
+            const link = req.params.link;
+            await userService.changePass(newPass, link);
+            return res.json('Password successfully changed');
         } catch (error) {
             next(error);
         }
     }
+
+    async sendMail(req, res, next) {
+        try{
+            const link = v4();
+            const {email} = req.body;
+            const user = await User.findOne({where: {email: email}});
+            user.passLink = link;
+            await user.save();
+            await MailService.sendChangePassMail(email, `${process.env.API_URL}api/change-pass/${link}`);
+            return res.json(email);
+        } catch(error){
+            next(error);
+        }
+    }
+
+
     async refresh(req, res, next) {
         try {
             const {refreshToken} = req.cookies;
             const userData = await userService.refresh(refreshToken);
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
-            return res.json(userData)
+            return res.json(userData);
         } catch (error) {
             next(error);
         }
