@@ -18,9 +18,10 @@ class UserController{
             }
             const {email, password, name, surname, age, gender, summary} = req.body;
             let imageName = null
-            if (req.files !== null) {
+            if (req.files) {
                 const {image} = req.files;
-                let imageName = v4() + ".jpg";
+                imageName = v4() + ".jpg";
+                console.log(imageName)
                 await image.mv(path.resolve(__dirname, 'static', imageName));
             }
             const userData = await userService.registration(
