@@ -12,20 +12,20 @@
 </head>
 <body>
     
-    <main class="main">
+    <main id="app" class="main">
         <div class="container">
-            <form name="form1" id="form1" class="main-form main-form_registration">
+            <form @submit="sendInfo" name="form1" id="form1" class="main-form main-form_registration">
                 <div class="registration">
                     <label class="main-form_title">
                         Registration
                     </label>
                     <div class="add">
                         <span class="add-span1"></span>
-                        <input id="email" name="email" type="text" placeholder="email" class="main-form_input main-form_login" value="baba@gmail.com">
+                        <input v-model="email" id="email" name="email" type="text" placeholder="email" class="main-form_input main-form_login" value="baba@gmail.com">
                     </div>
                     <div class="add">
                         <span class="add-span2"></span>
-                        <input id="password" name="password" type="text" placeholder="Password" class="main-form_input main-form_password" pattern="[a-zA-Z0-9]{4,90}" value="123445">
+                        <input v-model="pass" id="password" name="password" type="text" placeholder="Password" class="main-form_input main-form_password" pattern="[a-zA-Z0-9]{4,90}" value="123445">
                         <h3 class="main-form_password-title">
                             The password must consist only of Latin characters and numbers
                         </h3>
@@ -53,14 +53,14 @@
                     <label class="main-form_title">
                         About
                     </label>
-                    <input value="123445" id="name" name="name" placeholder="name" type="text" class="main-form_about-name">
-                    <input value="123445" id="surname" name="surname" placeholder="surname" type="text" class="main-form_about-surname">
-                    <input value="12" id="age" name="age" placeholder="age" type="text" class="main-form_about-age">
-                    <input value="123445" id="summary" name="summary" placeholder="summary" type="text" class="main-form_about-summary">
+                    <input v-model="name" value="123445" id="name" name="name" placeholder="name" type="text" class="main-form_about-name">
+                    <input v-model="surname" value="123445" id="surname" name="surname" placeholder="surname" type="text" class="main-form_about-surname">
+                    <input v-model="age" value="12" id="age" name="age" placeholder="age" type="text" class="main-form_about-age">
+                    <input v-model="summary" value="123445" id="summary" name="summary" placeholder="summary" type="text" class="main-form_about-summary">
                     <label class="main-form_about-wrap">
                         <label class="main-form_about-label">
-                            <input value="1" id="gender" name="gender" type="radio" class="main-form_about-radiobtn"> male
-                            <input type="radio" class="main-form_about-radiobtn"> female
+                            <input v-model="gender" value="1" id="gender" name="gender" type="radio" class="main-form_about-radiobtn"> male
+                            <input v-model="gender" type="radio" class="main-form_about-radiobtn"> female
                         </label>
                     </label>
                     <!-- <input class="main-form_about-register" type="button" value="REgister" onclick="submitForms()" /> -->
@@ -77,11 +77,13 @@
             
         </div>
     </main>
-    <script src="./js/send.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
+    <script src="./js/send.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
