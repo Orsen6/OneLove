@@ -10,7 +10,7 @@ let app = new Vue({
     el: "#app",
     data: {
         email: "",
-        pass: "",
+        password: "",
         name: "",
         surname: "",
         age: "",
@@ -20,7 +20,7 @@ let app = new Vue({
     },
     methods: {
         async sendInfo() {
-            const request = await fetch("http://localhost:5000/api/registration", {
+            const response = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
@@ -32,9 +32,8 @@ let app = new Vue({
                     gender: this.gender,
                     summary: this.summary
                 }),
-                
-            }),
-            
+            })
+            const data = await response.json();
         }
     }
 })
