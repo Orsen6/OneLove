@@ -14,7 +14,7 @@
     
     <main id="app" class="main">
         <div class="container">
-            <form @submit="sendInfo" name="form1" id="form1" class="main-form main-form_registration">
+            <form @submit="sendInfo" name="form1" id="form1" class="main-form main-form_registration" enctype="multipart/form-data">
                 <div class="registration">
                     <label class="main-form_title">
                         Registration
@@ -59,12 +59,12 @@
                     <input v-model="summary" value="123445" id="summary" name="summary" placeholder="summary" type="text" class="main-form_about-summary">
                     <label class="main-form_about-wrap">
                         <label class="main-form_about-label">
-                            <input v-model="gender" value="1" id="gender" name="gender" type="radio" class="main-form_about-radiobtn"> male
-                            <input v-model="gender" type="radio" class="main-form_about-radiobtn"> female
+                            <input v-model="selectedGender" value="1" id="gender" name="gender" type="radio" class="main-form_about-radiobtn"> male
+                            <input v-model="selectedGender" value="2" name="gender" type="radio" class="main-form_about-radiobtn"> female
                         </label>
                     </label>
                     <!-- <input class="main-form_about-register" type="button" value="REgister" onclick="submitForms()" /> -->
-                    <input type="file">
+                    <input ref="file" @change="uploadFile" type="file">
                     <button class="btn-register" type="submit">REgister</button>
                     <div class="main-form_relink">
                         Have an account?
