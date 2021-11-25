@@ -19,10 +19,11 @@ let app = new Vue({
         image: null
     },
     methods: {
-        async sendInfo(e) {
-             e.preventDefault();
-            const request = fetch("http://localhost:5000/api/registration", {
+        async sendInfo() {
+            const request = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify,
                 email: this.email,
                 pass: this.pass,
                 name: this.name,
