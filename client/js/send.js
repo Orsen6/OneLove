@@ -19,7 +19,8 @@ let app = new Vue({
         image: null
     },
     methods: {
-        async sendInfo() {
+        async sendInfo(e) {
+            e.preventDefault();
             const response = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
