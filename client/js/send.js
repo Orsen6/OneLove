@@ -37,7 +37,7 @@ let app = new Vue({
             data.append('age', this.age);
             const response = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "multipart/form-data"},
                 body: data
                 // JSON.stringify({
                 //     email: this.email,
