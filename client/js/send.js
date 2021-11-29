@@ -21,7 +21,6 @@ let app = new Vue({
     methods: {
         uploadFile(event) {
             this.image = event.target.files[0];
-            console.log(event);
         },
         async sendInfo(e) {
             e.preventDefault();
@@ -37,7 +36,7 @@ let app = new Vue({
             const response = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
                 // headers: {"Content-Type": "multipart/form-data"},
-                body: new FormData(form1),
+                body: userData,
                 // JSON.stringify({
                 //     email: this.email,
                 //     password: this.pass,
