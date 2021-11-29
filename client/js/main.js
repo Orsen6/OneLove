@@ -19,5 +19,6 @@ window.addEventListener("DOMContentLoaded", function() {
 document.querySelector(".main-form_btn-continue").addEventListener("click", () => {
     document.querySelector(".registration").classList.add("invise");
     document.querySelector(".main-form_about").classList.add("main-form_about--active");
+    document.querySelector(".main-form").classList.add("p0");
 });
 

@@ -204,6 +204,20 @@ input{
     font-size: 15px;
     color: red;
 }
+.btn-register{
+    display: block;
+    padding: 0 62px;
+    width: 415px;
+    margin: 30px auto;
+    height: 62px;
+    border-radius: 3px;
+    border: none;
+    background-color: #d33f8d;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
 .main-form_about{
     display: none;
 }
@@ -214,6 +228,10 @@ input{
 }
 .main-form_about.main-form_about--active{
     display: block;
+    padding: 30px;
+}
+.main-form.p0{
+    padding: 0;
 }
 .main-form_about-name,
 .main-form_about-surname,
@@ -238,6 +256,7 @@ input{
 .main-form_about-wrap{
     display: block;
     padding-left: 20px;
+    padding-bottom: 30px;
 }
 .main-form_about-label{
     margin-right: 20px;
@@ -245,6 +264,9 @@ input{
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     align-items: center;
+}
+.file{
+    padding-left: 20px;
 }
 .main-form_about-register{
     margin-top: 20px;

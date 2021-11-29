@@ -25,16 +25,15 @@ let app = new Vue({
         },
         async sendInfo(e) {
             e.preventDefault();
-            // const data = new FormData();
-            // data.append('image', this.image);
-            // data.append('email', this.email);
-            // data.append('password', this.password);
-            // data.append('name', this.name);
-            // data.append('surname', this.surname);
-            // data.append('age', this.age);
-            // data.append('gender', this.selectedGender);
-            // data.append('summary', this.summary);
-            // data.append('age', this.age);
+            const userData = new FormData();
+            userData.append('image', this.image);
+            userData.append('email', this.email);
+            userData.append('password', this.password);
+            userData.append('name', this.name);
+            userData.append('surname', this.surname);
+            userData.append('age', this.age);
+            userData.append('gender', this.selectedGender);
+            userData.append('summary', this.summary);
             const response = await fetch("http://localhost:5000/api/registration", {
                 method: "POST",
                 // headers: {"Content-Type": "multipart/form-data"},
