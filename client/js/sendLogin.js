@@ -5,6 +5,13 @@ app = new Vue({
         password: ""
     },
     methods: {
+        async getInfo(token) {
+            const hui = await fetch("http://localhost:5000/api/profile", {
+                method: "GET",
+                headers:  {"Authorization": `Bearer ${token}`}
+            })
+            window.location.href = 'OneLove/client/profile.html';
+        },
         async sendLogin(e) {
             e.preventDefault();
             const postLogin = await fetch("http://localhost:5000/api/login", {
@@ -17,6 +24,7 @@ app = new Vue({
             })
             const loginData = await postLogin.json();
             console.log(loginData);
+            getInfo(loginData.accessToken);
         }
     }
 })
