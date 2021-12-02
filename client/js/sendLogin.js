@@ -6,7 +6,8 @@ app = new Vue({
         password: ""
     },
     methods: {
-        sendlogin () {
+         async sendlogin (e) {
+            e.preventDefault();
             axios.post("http://localhost:5000/api/login", {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
