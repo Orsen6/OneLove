@@ -8,7 +8,7 @@ app = new Vue({
     methods: {
          async sendlogin (e) {
             e.preventDefault();
-            axios.post("http://localhost:5000/api/login", {
+            const postLogin = axios.post("http://localhost:5000/api/login", {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
                     email: this.email,
