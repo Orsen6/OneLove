@@ -3,7 +3,8 @@ app = new Vue({
     el: "#app",
     data: {
         email: "",
-        password: ""
+        password: "",
+        info: null
     },
     methods: {
         sendLogin (e) {
@@ -13,6 +14,9 @@ app = new Vue({
                     password: this.password
             })
             console.log(postLogin);
+            axios.get("http://localhost:5000/api/profile", {
+                headers:  {"Authorization": `Bearer ${token}`}
+            })
         }
         // async getInfo(token) {
         //     const hui = await fetch("http://localhost:5000/api/profile", {
