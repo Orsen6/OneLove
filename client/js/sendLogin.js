@@ -6,14 +6,14 @@ app = new Vue({
         password: ""
     },
     methods: {
-         async sendlogin (e) {
+         async sendLogin (e) {
             e.preventDefault();
             const postLogin = axios.post("http://localhost:5000/api/login", {
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
+                body: {
                     email: this.email,
                     password: this.password
-                })
+                }
             })
         }
         // async getInfo(token) {
