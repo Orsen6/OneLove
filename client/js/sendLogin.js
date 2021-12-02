@@ -6,14 +6,13 @@ app = new Vue({
         password: ""
     },
     methods: {
-         async sendLogin (e) {
+        sendLogin (e) {
             e.preventDefault();
             const postLogin = axios.post("http://localhost:5000/api/login", {
-                body: {
                     email: this.email,
                     password: this.password
-                }
             })
+            console.log(postLogin);
         }
         // async getInfo(token) {
         //     const hui = await fetch("http://localhost:5000/api/profile", {
