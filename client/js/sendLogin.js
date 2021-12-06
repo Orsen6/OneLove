@@ -1,15 +1,13 @@
-
 app = new Vue({
     el: "#app",
     data: {
-        password: "",
+        email: null,
+        password: null,
+        info: null
     },
-        email: this.email,
-                password: this.password
-            })
-                console.log(postLogin);
-                getInfo(postLogin.accessToken);
-=======
+    methods: {
+        sendLogin (e) {
+            e.preventDefault();
             this.login()
                 .then((data) => {
                     if (data.status) {
@@ -17,6 +15,7 @@ app = new Vue({
                             .then((data) => {
                                 if (data.status) {
                                     console.log(data);
+                                    info = data.userData;
                                 } else {
                                     
                                 }
