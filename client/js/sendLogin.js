@@ -15,7 +15,7 @@ app = new Vue({
                         this.getInfo(data.userData.accessToken)
                             .then((data) => {
                                 if (data.status) {
-                                    console.log(data);
+                                    console.log(data.userData);
                                 } else {
                                     
                                 }
