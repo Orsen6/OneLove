@@ -4,7 +4,6 @@ app = new Vue({
     data: {
         email: "",
         password: "",
-        info: null
     },
     methods: {
         getInfo(token) {
@@ -15,11 +14,11 @@ app = new Vue({
         sendLogin (e) {
             e.preventDefault();
             const postLogin = axios.post("http://localhost:5000/api/login", {
-                    email: this.email,
-                    password: this.password
+                email: this.email,
+                password: this.password
             })
-            console.log(postLogin);
-            getInfo(postLogin.refreshToken);
+                console.log(postLogin);
+                getInfo(postLogin.accessToken);
         }
         // async getInfo(token) {
         //     const hui = await fetch("http://localhost:5000/api/profile", {
