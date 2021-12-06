@@ -42,22 +42,22 @@
                     </a>
                 </div>
             </form>
-            <div v-for="item in info" class="userData">
+            <div class="userData">
                 <div class="profile-header">
                     <img src="" alt="">
                     <div class="profile-header_name">
-                        {{ item.surname }} {{item.name}}
+                        {{ info.surname }} {{info.name}}
                     </div>
                 </div>
                 <div class="profile-about">
                     <div class="profile-about_summary">
-                       About : {{ item.summary }}
+                       About : {{ info.summary }}
                     </div>
                     <div class="profile-about_age">
-                        {{ item.age }} y.o.
+                        {{ info.age }} y.o.
                     </div>
                     <div class="profile-about_gender">
-                        {{item.selectedGender}}
+                        {{info.selectedGender}}
                     </div>
                 </div>
             </div>
