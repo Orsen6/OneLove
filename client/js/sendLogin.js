@@ -17,6 +17,7 @@ app = new Vue({
                                     console.log(data);
                                     console.log(data.userData);
                                     this.info = data.userData;
+                                    console.log(this.info);
                                 } else {
                                     
                                 }
