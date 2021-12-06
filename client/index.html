@@ -45,8 +45,8 @@
             <div class="userData">
                 <div class="profile-header">
                     <img src="" alt="">
-                    <div v-for="item in info" class="profile-header_name">
-                        {{ item.name }}
+                    <div v-if="info" class="profile-header_name">
+                        {{ info.name }}
                     </div>
                 </div>
                 <div class="profile-about">
