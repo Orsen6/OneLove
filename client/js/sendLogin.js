@@ -16,6 +16,7 @@ app = new Vue({
                                 if (data.status) {
                                     console.log(data);
                                     console.log(data.userData);
+                                    window.location.href = 'http://127.0.0.1:5000/api/profile';
                                     this.info = data.userData;
                                 } else {
                                     
