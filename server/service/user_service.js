@@ -60,7 +60,9 @@ class UserService {
 
     async getUserData(userId){
         const userData = await User.findByPk(userId);
-        return userData;
+        const updUserData = userData.toJSON();
+        delete updUserData.password;
+        return updUserData
     }
 
     async changePass(newUserPass, link){

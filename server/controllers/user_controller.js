@@ -100,7 +100,7 @@ class UserController{
                 return next(ApiError.UnauthorizedError());
             }
            const tokenData = await Token.findOne({where: {refreshToken: req.cookies.refreshToken}});
-           const userData = await User.findByPk(tokenData.userId);
+           const userData = await userService.getUserData(tokenData.userId);
            return res.json({status: true, userData});
         } catch (error) {
             next(error);
