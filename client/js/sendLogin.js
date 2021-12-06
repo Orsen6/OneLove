@@ -1,4 +1,3 @@
-
 app = new Vue({
     el: "#app",
     data: {
@@ -15,7 +14,8 @@ app = new Vue({
                         this.getInfo(data.userData.accessToken)
                             .then((data) => {
                                 if (data.status) {
-                                    console.log(data.userData);
+                                    console.log(data);
+                                    info = data.userData;
                                 } else {
                                     
                                 }
