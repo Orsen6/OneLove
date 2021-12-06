@@ -1,9 +1,3 @@
-let app = new Vue({
-    el: "#app",
-    data: {
-
-    },
-    methods: {
-        addClass
-    }
-})
+document.querySelector(".main-form_btn").addEventListener("click", () => {
+    document.querySelector(".main-form").classList.add("unactive");
+});

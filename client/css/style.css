@@ -110,6 +110,9 @@ input{
     font-weight: 900;
     padding-bottom: 55px;
 }
+.main-form.unactive{
+    display: none;
+}
 .main-form_input{
     height: 62px;
     padding: 0 30px 0 62px;

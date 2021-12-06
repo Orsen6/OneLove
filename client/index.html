@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реєстрація</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -42,13 +42,30 @@
                     </a>
                 </div>
             </form>
-        </div>
-        <div class="userData">
-            {{ info }}
+            <div class="userData">
+                <div class="profile-header">
+                    <img src=`${{ info.image }}` alt="">
+                    <div class="profile-header_name">
+                        {{ info.surname }} {{info.name}}
+                    </div>
+                </div>
+                <div class="profile-about">
+                    <div class="profile-about_summary">
+                       About : {{ info.summary }}
+                    </div>
+                    <div class="profile-about_age">
+                        {{ info.age }} y.o.
+                    </div>
+                    <div class="profile-about_gender">
+                        {{info.selectedGender}}
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/sendLogin.js"></script>
+    <script src="js/btn.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
