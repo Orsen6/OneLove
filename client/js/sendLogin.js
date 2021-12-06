@@ -15,6 +15,7 @@ app = new Vue({
                             .then((data) => {
                                 if (data.status) {
                                     console.log(data);
+                                    console.log(data.userData);
                                     info = data.userData;
                                 } else {
                                     
