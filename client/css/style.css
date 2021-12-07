@@ -285,3 +285,77 @@ input{
     font-weight: 700;
     color: #fff;
 }
+.userData{
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    max-width: 510px;
+}
+.profile-header{
+    background-color: #fff;
+    padding: 60px 30px;
+    max-width: 500px;
+}
+.profile-header_name{
+    display: flex;
+    align-items: left;
+}
+.profile-header_img{
+    margin-bottom: 30px;
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+}
+.profile-wrap{
+    margin: 0 auto;
+}
+.profile-header_name-name{
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.profile-header_name-name span {
+    font-size: 14px;
+}
+.profile-header_age{
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.profile-header_age span{
+    font-size: 14px;
+}
+.profile-header_gender{
+    font-size: 26px;
+}
+.profile-header_gender span {
+    font-size: 14px;
+}
+.profile-about{
+    max-width: 440px;
+}
+.profile-about_summary{
+    display: flex;
+    max-width: 450px;
+    word-wrap: break-word;
+}
+.profile-about_summary div{
+    max-width: 300px;
+    height: auto;
+    
+}
+.logout-wrap{
+    width: 100%;
+    display: flex;
+    padding-top: 30px;
+}
+.logout{
+    width: 100%;
+    padding: 30px 60px;
+    border-radius: 3px;
+    border: none;
+    background-color: #d33f8d;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}

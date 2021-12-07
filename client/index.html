@@ -43,18 +43,28 @@
                 </div>
             </form>
             <div class="userData">
-                <div class="profile-header">
-                    <img src="" alt="">
-                    <div v-if="info" class="profile-header_name">
-                        {{ info.name }}
+                <div v-if="info" class="profile-header">
+                    <div class="profile-header_name">
+                        <img v-bind:src="info.image" class="profile-header_img" src="" alt="">
+                        <div class="profile-wrap">
+                            <h2 class="profile-header_name-name">
+                                <span>name:</span> {{ info.name }}
+                            </h2>
+                            <div class="profile-header_age">
+                               <span>years old -</span> {{ info.age }}
+                            </div>
+                            <div class="profile-header_gender">
+                                <span>your gender</span> - {{ info.gender }}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="profile-about">
-                    <div class="profile-about_summary">
+                    <div class="profile-about">
+                        <div class="profile-about_summary">
+                            Summary :<div> {{ info.summary}} </div>
+                        </div>
                     </div>
-                    <div class="profile-about_age">
-                    </div>
-                    <div class="profile-about_gender">
+                    <div class="logout-wrap">
+                        <a href="./index.html" class="logout">Logout</a>
                     </div>
                 </div>
             </div>
