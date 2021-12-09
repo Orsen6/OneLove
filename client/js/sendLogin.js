@@ -17,7 +17,11 @@ app = new Vue({
                                     console.log(data);
                                     console.log(data.userData);
                                     this.info = data.userData;
-                                    this.info.image = '../server/static/' + this.info.image;
+                                    if(this.info.image) {
+                                        this.info.image = '../server/static/' + this.info.image;
+                                    } else {
+                                        this.info.image = '../server/static/123.png';
+                                    }
                                     console.log(this.info);
                                 } else {
                                     
