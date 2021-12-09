@@ -48,6 +48,13 @@ input{
     padding: 0;
 }
 
+.container-big{
+    max-width: 1200px;
+    height: 500px;
+    padding: 0 10px;
+    margin: 0 auto;
+    background-color: #fff;
+}
 .container{
     max-width: 600px;
     padding: 0 10px;
@@ -285,7 +292,7 @@ input{
     font-weight: 700;
     color: #fff;
 }
-.userData{
+/* .userData{
     font-size: 18px;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
@@ -358,4 +365,41 @@ input{
     font-size: 16px;
     font-weight: 700;
     text-align: center;
+} */
+.userData{
+    display: flex;
+}
+.profile-left{
+    background-color: #fff;
+    width: 250px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.profile-left_img{
+    display: block;
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 1px solid #333333;
+}
+.profile-right{ 
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+.profile-right_head{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999999;
+    margin-bottom: 25px;
+}
+.profile-right_head-name{
+    font-size: 24px;
+}
+.profile-right_inner-wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }

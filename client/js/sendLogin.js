@@ -14,15 +14,17 @@ app = new Vue({
                         this.getInfo(data.userData.accessToken)
                             .then((data) => {
                                 if (data.status) {
-                                    console.log(data);
-                                    console.log(data.userData);
+                                    if(data.userData.gender == 1) {
+                                        data.userData.gender = 'male';
+                                    } else {
+                                        data.userData.gender = 'female'
+                                    }
                                     this.info = data.userData;
                                     if(this.info.image) {
                                         this.info.image = '../server/static/' + this.info.image;
                                     } else {
                                         this.info.image = '../server/static/123.png';
                                     }
-                                    console.log(this.info);
                                 } else {
                                     
                                 }

@@ -12,11 +12,72 @@
 </head>
 <body>
     <main id="" class="main">
-        <div class="container">
-            
+        <div class="container-big">
+            <div v-if="info" class="userData">
+                <div class="profile-left">
+                    <img src="../server/static/9d915a6f-2d65-405e-abbb-a0f9c07a3218.jpg" alt="" class="profile-left_img">
+                </div>
+                <div class="profile-right">
+                    <div class="profile-right_head">
+                        <h1 class="profile-right_head-name">
+                            Name Surname
+                        </h1>
+                    </div>
+                    <div class="profile-right_inner">
+                        <div class="profile-right_inner-wrap">
+                            <p class="profile-right_inner-title">
+                                Age: 
+                            </p>
+                            <h2 class="profile-right_inner-info">
+                                15
+                            </h2>
+                        </div>
+                        <div class="profile-right_inner-wrap">
+                            <p class="profile-right_inner-title">
+                                Gender: 
+                            </p>
+                            <h2 class="profile-right_inner-info">
+                                1
+                            </h2>
+                        </div>
+                        <div class="profile-right_inner-wrap">
+                            <p class="profile-right_inner-title">
+                                Summary: 
+                            </p>
+                            <h2 class="profile-right_inner-info">
+                                hjnnnnnnnnnnnnnnnnfg
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="js/sendLogin.js"></script>
 </body>
 </html>
+<div class="userData">
+    <div v-if="info" class="profile-header">
+        <div class="profile-header_name">
+            <img class="profile-header_img" :src="info.image" alt="">
+            <div class="profile-wrap">
+                <h2 class="profile-header_name-name">
+                    <span>name:</span> {{ info.name }}
+                </h2>
+                <div class="profile-header_age">
+                   <span>years old -</span> {{ info.age }}
+                </div>
+                <div class="profile-header_gender">
+                    <span>your gender</span> - {{ info.gender }}
+                </div>
+            </div>
+        </div>
+        <div class="profile-about">
+            <div class="profile-about_summary">
+                Summary :<div> {{ info.summary}} </div>
+            </div>
+        </div>
+        <div class="logout-wrap">
+            <a href="./index.html" class="logout">Logout</a>
+        </div>
+    </div>
+</div>
