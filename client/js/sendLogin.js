@@ -17,6 +17,7 @@ app = new Vue({
                                     console.log(data);
                                     console.log(data.userData);
                                     this.info = data.userData;
+                                    this.info.image = '../server/static/' + this.info.image;
                                     console.log(this.info);
                                 } else {
                                     

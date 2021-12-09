@@ -45,7 +45,7 @@
             <div class="userData">
                 <div v-if="info" class="profile-header">
                     <div class="profile-header_name">
-                        <img class="profile-header_img" v-bind:src="require('../server/static/' + info.image)" src="" alt="">
+                        <img class="profile-header_img" :src="info.image" alt="">
                         <div class="profile-wrap">
                             <h2 class="profile-header_name-name">
                                 <span>name:</span> {{ info.name }}
