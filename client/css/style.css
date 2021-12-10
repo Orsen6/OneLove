@@ -246,7 +246,8 @@ input{
 .main-form_about-name,
 .main-form_about-surname,
 .main-form_about-age,
-.main-form_about-summary{
+.main-form_about-summary,
+.reset-form_input{
     height: 62px;
     padding: 0 30px;
     width: 355px;
@@ -402,4 +403,11 @@ input{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+.reset-form_title{
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
 }
